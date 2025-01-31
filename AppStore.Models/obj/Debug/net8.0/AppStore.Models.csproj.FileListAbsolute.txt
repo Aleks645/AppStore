@@ -1,0 +1,12 @@
+/home/nightrou/Boxes/MSBOX/C# Projects/AppStore/AppStore.Models/bin/Debug/net8.0/AppStore.Models.deps.json
+/home/nightrou/Boxes/MSBOX/C# Projects/AppStore/AppStore.Models/bin/Debug/net8.0/AppStore.Models.dll
+/home/nightrou/Boxes/MSBOX/C# Projects/AppStore/AppStore.Models/bin/Debug/net8.0/AppStore.Models.pdb
+/home/nightrou/Boxes/MSBOX/C# Projects/AppStore/AppStore.Models/obj/Debug/net8.0/AppStore.Models.csproj.AssemblyReference.cache
+/home/nightrou/Boxes/MSBOX/C# Projects/AppStore/AppStore.Models/obj/Debug/net8.0/AppStore.Models.GeneratedMSBuildEditorConfig.editorconfig
+/home/nightrou/Boxes/MSBOX/C# Projects/AppStore/AppStore.Models/obj/Debug/net8.0/AppStore.Models.AssemblyInfoInputs.cache
+/home/nightrou/Boxes/MSBOX/C# Projects/AppStore/AppStore.Models/obj/Debug/net8.0/AppStore.Models.AssemblyInfo.cs
+/home/nightrou/Boxes/MSBOX/C# Projects/AppStore/AppStore.Models/obj/Debug/net8.0/AppStore.Models.csproj.CoreCompileInputs.cache
+/home/nightrou/Boxes/MSBOX/C# Projects/AppStore/AppStore.Models/obj/Debug/net8.0/AppStore.Models.dll
+/home/nightrou/Boxes/MSBOX/C# Projects/AppStore/AppStore.Models/obj/Debug/net8.0/refint/AppStore.Models.dll
+/home/nightrou/Boxes/MSBOX/C# Projects/AppStore/AppStore.Models/obj/Debug/net8.0/AppStore.Models.pdb
+/home/nightrou/Boxes/MSBOX/C# Projects/AppStore/AppStore.Models/obj/Debug/net8.0/ref/AppStore.Models.dll
