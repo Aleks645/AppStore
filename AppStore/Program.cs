@@ -6,6 +6,9 @@ using Mapster;
 using MapsterMapper;
 using Serilog;
 using Serilog.Sinks.SystemConsole.Themes;
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using AppStore.Validators;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +30,9 @@ builder.Services
 
 TypeAdapterConfig<App, AppDTO>.NewConfig().TwoWays();
 builder.Services.AddSingleton<IMapper, Mapper>();
+
+builder.Services.AddValidatorsFromAssemblyContaining<AddAppValidator>();
+builder.Services.AddFluentValidationAutoValidation();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
