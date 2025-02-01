@@ -9,6 +9,8 @@ using Serilog.Sinks.SystemConsole.Themes;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using AppStore.Validators;
+using MongoDB.Driver;
+using AppStore.HealthChecks;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +25,15 @@ builder.Logging.AddSerilog(logger);
 builder.Services.Configure<MongoDbConfiguration>(
     builder.Configuration.GetSection("MongoDBSettings")
 );
+
+var mongoDbConfig = builder.Configuration.GetSection("MongoDBSettings").Get<MongoDbConfiguration>();
+
+if (mongoDbConfig != null && !string.IsNullOrEmpty(mongoDbConfig.ConnectionString))
+{
+    builder.Services.AddHealthChecks()
+        .AddMongoDb(sp => new MongoClient(mongoDbConfig.ConnectionString), name: "mongodb", timeout: TimeSpan.FromSeconds(3));
+}
+
 
 builder.Services
     .RegisterDataLayer()
@@ -39,6 +50,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddHealthChecks();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -47,6 +60,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.ConfigureHealthCheckEndpoint();
 
 app.UseHttpsRedirection();
 
