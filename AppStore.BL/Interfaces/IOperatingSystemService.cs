@@ -1,11 +1,10 @@
 using System;
 using AppStore.Models.DTO;
 
-namespace AppStore.DL.Interfaces;
+namespace AppStore.BL.Interfaces;
 
-public interface IOperatingSystemRepository
+public interface IOperatingSystemService
 {
-
     void AddOperatingSystem(OperatingSystemDTO os);
 
     void DeleteOperatingSystem(string Id);
@@ -13,5 +12,4 @@ public interface IOperatingSystemRepository
     IEnumerable<OperatingSystemDTO> GetOperatingSystemsByName(IEnumerable<string> osNames);
 
     OperatingSystemDTO? GetOperatingSystemById(string Id);
-
 }

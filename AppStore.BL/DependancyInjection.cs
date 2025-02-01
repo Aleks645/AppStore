@@ -12,6 +12,8 @@ public static class DependancyInjection
     public static IServiceCollection RegisterBusinessLayer(this IServiceCollection services)
     {
         services.AddSingleton<IAppService, AppService>();
+        services.AddSingleton<IOperatingSystemService, OperatingSystemService>();
+        services.AddSingleton<IAppBlService, AppBlService>();
         return services;
 
     }

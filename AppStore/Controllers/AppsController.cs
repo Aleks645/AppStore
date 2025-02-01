@@ -101,7 +101,7 @@ namespace AppStore.Controllers
 
                 if (appDto == null)
                 {
-                    return BadRequest("Can't convert app to movie DTO");
+                    return BadRequest("Can't convert app to app DTO");
                 }
 
                 _appService.UpdateApp(Id,appDto);
