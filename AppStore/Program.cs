@@ -4,9 +4,17 @@ using AppStore.Models.DTO;
 using AppStore.Models.Models;
 using Mapster;
 using MapsterMapper;
+using Serilog;
+using Serilog.Sinks.SystemConsole.Themes;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var logger = new LoggerConfiguration()
+    .Enrich.FromLogContext()
+    .WriteTo.Console(theme:AnsiConsoleTheme.Code)
+    .CreateLogger();
+
+builder.Logging.AddSerilog(logger);
 // Add services to the container.
 
 builder.Services.Configure<MongoDbConfiguration>(

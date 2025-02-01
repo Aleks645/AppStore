@@ -15,10 +15,12 @@ namespace AppStore.Controllers
 
         private readonly IAppService _appService;
         private readonly IMapper _mapper;
+        private readonly ILogger<AppsController> _logger;
 
-        public AppsController(IAppService appService, IMapper mapper){
+        public AppsController(IAppService appService, IMapper mapper, ILogger<AppsController> logger){
             _appService = appService;
             _mapper = mapper;
+            _logger = logger;
         }
 
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -67,7 +69,7 @@ namespace AppStore.Controllers
 
                 if (appDto == null)
                 {
-                    return BadRequest("Can't convert app to movie DTO");
+                    return BadRequest("Can't convert app to app DTO");
                 }
 
                 _appService.AddApp(appDto);
@@ -76,7 +78,7 @@ namespace AppStore.Controllers
             }
             catch (System.Exception ex)
             {
-                // _logger.LogError(ex, $"Error adding movie with");
+                _logger.LogError(ex, $"Error adding app with");
                 return BadRequest(ex.Message);
             }
         }
@@ -85,13 +87,7 @@ namespace AppStore.Controllers
         [HttpDelete("Delete")]
         public IActionResult Delete(string id)
         {
-            // if (id <= 0)
-            // {
-            //     return BadRequest("Id must be greater than 0");
-            // }
-
             _appService.DeleteApp(id);
-
 
             return Ok();
         }
@@ -114,7 +110,7 @@ namespace AppStore.Controllers
             }
             catch (System.Exception ex)
             {
-                // _logger.LogError(ex, $"Error adding movie with");
+                _logger.LogError(ex, $"Error adding app with");
                 return BadRequest(ex.Message);
             }
         }
