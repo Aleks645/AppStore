@@ -27,12 +27,16 @@ public class AppServiceBlTests
             {
                 Id = Guid.NewGuid().ToString(),
                 Name = "App 1",
+                Description = "Description 1",
+                TotalDownloads = 1,
                 OperatingSystems = ["OS 1", "OS 2"]
             },
             new AppDTO()
             {
                 Id = Guid.NewGuid().ToString(),
                 Name = "App 2",
+                Description = "Description 2",
+                TotalDownloads = 2,
                 OperatingSystems = ["OS 3", "OS 4"]
             }
         }; 
@@ -42,17 +46,20 @@ public class AppServiceBlTests
             new OperatingSystemDTO()
             {
                 Id = "9e982c56-85df-4c17-bd0c-8ca75083bd19",
-                Name = "Linux"
+                Name = "Linux",
+                Architectures = ["arch1", "arch2"]
             },
             new OperatingSystemDTO()
             {
                 Id = "6ccfab23-3a3f-4ceb-87a9-2d9110f7486d",
-                Name = "Windows"
+                Name = "Windows",
+                Architectures = ["arch1", "arch2"]
             },
             new OperatingSystemDTO()
             {
                 Id = "ac160845-8eb0-472b-9208-02175a9e073e",
-                Name = "Android"
+                Name = "Android",
+                Architectures = ["arch3", "arch4"]
             },
 
         };
