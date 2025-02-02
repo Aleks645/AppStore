@@ -7,12 +7,10 @@ namespace AppStore.BL.Services;
 
 public class OperatingSystemService : IOperatingSystemService
 {
-    private readonly IAppRepository _appRepository;
     private readonly IOperatingSystemRepository _operatingSystemRepository;
 
-    public OperatingSystemService(IAppRepository appRepository, IOperatingSystemRepository operatingSystemRepository){
+    public OperatingSystemService(IOperatingSystemRepository operatingSystemRepository){
 
-        _appRepository = appRepository;
         _operatingSystemRepository = operatingSystemRepository;
 
     }

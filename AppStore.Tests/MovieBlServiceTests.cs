@@ -11,12 +11,11 @@ namespace AppService.Tests;
 
 public class AppServiceBlTests
 {
-    public class MovieBlServiceTests
-    {
+
         private Mock<IAppService> _appServiceMock;
         private Mock<IOperatingSystemRepository> _osRepositoryMock;
 
-        public MovieBlServiceTests()
+        public AppServiceBlTests()
         {
             _appServiceMock = new Mock<IAppService>();
             _osRepositoryMock = new Mock<IOperatingSystemRepository>();
@@ -73,18 +72,16 @@ public class AppServiceBlTests
 
 
             //inject
-            var movieBlService = new AppBlService(
+            var appBlService = new AppBlService(
                 _appServiceMock.Object,
                 _osRepositoryMock.Object);
 
             //Act
             var result =
-                movieBlService.GetDetailedApps();
+                appBlService.GetDetailedApps();
 
             //Assert
             Assert.NotNull(result);
             Assert.Equal(expectedCount, result.Count);
         }
-
-    }
 }

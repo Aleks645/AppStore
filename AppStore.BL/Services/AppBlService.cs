@@ -10,9 +10,7 @@ public class AppBlService : IAppBlService
         private readonly IAppService _appService;
         private readonly IOperatingSystemRepository _osRepository;
 
-        public AppBlService(
-            IAppService appService,
-            IOperatingSystemRepository osRepository)
+        public AppBlService(IAppService appService, IOperatingSystemRepository osRepository)
         {
             _appService = appService;
             _osRepository = osRepository;
@@ -30,6 +28,8 @@ public class AppBlService : IAppBlService
                 {
                     AppId = app.Id,
                     AppName = app.Name,
+                    AppDescription = app.Description,
+                    TotalDownloads = app.TotalDownloads,
                     OperatingSystems = _osRepository.GetOperatingSystemsByName(app.OperatingSystems)
                 };
 

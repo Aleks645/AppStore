@@ -9,5 +9,9 @@ public class AppDTO
     
     public string Name { get; set; } = string.Empty;
 
+    public string Description {get; set; } = string.Empty;
+
+    public int TotalDownloads {get; set; }
+
     public List<string> OperatingSystems { get; set; } = [];
 }
