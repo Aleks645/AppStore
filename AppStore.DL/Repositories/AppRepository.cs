@@ -68,6 +68,8 @@ public class AppRepository : IAppRepository
 
         var update = Builders<AppDTO>.Update
             .Set(a => a.Name, updatedAppDto.Name)
+            .Set(a => a.Description, updatedAppDto.Description)
+            .Set(a => a.TotalDownloads, updatedAppDto.TotalDownloads)
             .Set(a => a.OperatingSystems, updatedAppDto.OperatingSystems);
 
         _apps.UpdateOne(filter, update);
